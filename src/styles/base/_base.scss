@@ -1,13 +1,10 @@
 html {
   font-size: 62.5%;
-  // color: black !important;
-  min-height: 100vh;
-}
-
-.table {
-  color: $base-font-color;
+  color: $off-white;
   font-family: $main-font;
-  margin-top: $xl-size;
+  min-height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .table__monthly-repayment {
@@ -52,9 +49,8 @@ body {
 }
 
 .input__title {
-  color: $base-font-color;
   font-size: $m-size;
-  font-family: $main-font;
+  
   font-weight: 600;
   margin: $s-size 0 $s-size 0;
 }
@@ -67,21 +63,19 @@ body {
   box-sizing:border-box;
   height: $l-size;
   border-style:none;
-  background-color: $base-font-color;
+  background-color:$off-white;
   border-radius: 6px;
   width:100%;
   padding: 10px;
   font-size: $m-size;
-  font-family: $main-font;
+  
   outline: none;
   font-weight: 600;
 }
 
 .mainTitle {
   font-size: $l-size;
-  color: $base-font-color;
   margin: $s-size 0 $m-size 0;
-  font-family: $main-font;
 }
 
 .container {
@@ -132,9 +126,6 @@ body {
   }
 }
 
-
-
-
 .table__row {
   display: flex;
   margin-bottom: $s-size;
@@ -152,6 +143,7 @@ body {
 .table {
   font-size: $m-size;
   padding-bottom: $l-size;
+  margin-top: $xl-size;
 }
 
 .table__header {
@@ -159,8 +151,6 @@ body {
   white-space: nowrap;
   margin-bottom: $s-size;
 }
-
-
 
 .slider {
   -webkit-appearance: none;
@@ -195,17 +185,13 @@ body {
 }
 
 .input__value {
-  color: $base-font-color;
   font-size: $m-size;
-  font-family: $main-font;
   outline: none;
   font-weight: 600;
 }
 
 .infoText {
-  color: $base-font-color;
   font-size: $m-size;
-  font-family: $main-font;
   outline: none;
   font-weight: 400;
   margin-bottom: $m-size;
@@ -215,10 +201,6 @@ body {
   font-weight: 800;
 }
 
-html {
-  overflow: scroll;
-  overflow-x: hidden;
-}
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;

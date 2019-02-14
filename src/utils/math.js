@@ -1,15 +1,4 @@
-
-
 export default (amount, duration, rate) => {
-  // const re = /^[1-9]\d*$/;
-  // if (amount === '' ||
-  //     duration === '' ||
-  //     rate === '' ||
-  //     re.test(amount) ||
-  //     re.test(duration) ||
-  //     re.test(rate)) {
-  //       return;
-  //     }
   let schedule = [];
   for (let i = 1; i <= duration; i++) {
     schedule.push({
