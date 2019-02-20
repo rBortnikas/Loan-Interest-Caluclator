@@ -1,14 +1,24 @@
-export default (amount, duration, rate) => {
+export default (amount, duration, percentRate) => {
   let schedule = [];
-  for (let i = 1; i <= duration; i++) {
+
+  const splitLoan = amount / duration;
+  const rate = percentRate / 100;
+
+  let remaining = amount;
+  let totalInterest = 0;
+
+  for (let month = 1; month <= duration; month++) {
     schedule.push({
-      month: i,
-      splitLoan: amount/duration,
-      interest: (amount - amount/duration * (i - 1)) * rate/100,
-      monthlyRepayment: amount/duration + ((amount - amount/duration * (i - 1)) * rate/100)
+      month,
+      splitLoan,
+      interest: remaining * rate,
+      monthlyRepayment: splitLoan + remaining * rate
     });
+
+    totalInterest += remaining * rate;
+    remaining = amount - splitLoan * month;
   }
-  const totalInterest = schedule.reduce((a, b) => ({interest: a.interest + b.interest})).interest;
+
   const totals = {
     originalLoan: Math.round(amount),
     interest: Math.round(totalInterest),
@@ -16,4 +26,4 @@ export default (amount, duration, rate) => {
   };
 
   return { schedule, totals };
-}
+};
